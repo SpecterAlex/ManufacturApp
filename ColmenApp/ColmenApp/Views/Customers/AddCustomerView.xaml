@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ColmenApp.Views.Customers.AddCustomerView"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:controls="clr-namespace:ColmenApp.Renderers"
+             xmlns:viewModels="clr-namespace:ColmenApp.ViewModels;assembly=ColmenApp"
+             viewModels:ViewModelLocator.AutoWireViewModel="True">
+    <StackLayout>
+        <Grid VerticalOptions="FillAndExpand" BackgroundColor="#F3F3F3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!-- Header -->
+            <Grid Grid.Row="0" HeightRequest="75"
+                  BackgroundColor="#0254D5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="90"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="90"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0"
+                       Text="CANCELAR"
+                       TextColor="White"
+                       FontSize="Small"
+                       HorizontalOptions="Start"
+                       VerticalOptions="End"
+                       Margin="0,0,0,20">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Command="{Binding backCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Grid.Column="1"
+                       Text="Clientes"
+                       TextColor="White"
+                       FontSize="Title"
+                       FontAttributes="Bold"
+                       VerticalOptions="End"
+                       HorizontalOptions="Center"
+                       Margin="0,0,0,19"
+                       />
+            </Grid>
+            <!-- Search Bar -->
+            <!-- Content -->
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" 
+                    Text="Agregar Cliente"
+                       FontSize="Large"
+                       TextColor="#283442"/>
+                <Frame Grid.Row="1"
+                       BackgroundColor="#F3F3F3"
+                       Margin="3">
+                    <StackLayout >
+                        <controls:StandardEntry 
+                            x:Name="nameEntry"
+                            BackgroundColor="#FFFFFF"
+                            BorderColor="#C5C5C5"
+                            BorderThickness="1"
+                            CornerRadius="3"
+                            Padding="8"
+                            Margin="0,0,0,5"
+                            FontSize="Medium"
+                            Placeholder="Nombre del Cliente"
+                            PlaceholderColor="#8F8F8F"
+                            Text="" />
+                        <controls:StandardEntry
+                            x:Name="rfcEntry"
+                            BackgroundColor="#FFFFFF"
+                            BorderColor="#C5C5C5"
+                            BorderThickness="1"
+                            CornerRadius="3"
+                            Padding="8"
+                            Margin="0,0,0,5"
+                            Placeholder="RFC"
+                            PlaceholderColor="#8F8F8F"
+                            FontSize="Medium"
+                            Text="" />
+                        <controls:StandardEntry 
+                            x:Name="mailEntry"
+                            BackgroundColor="#FFFFFF"
+                            BorderColor="#C5C5C5"
+                            BorderThickness="1"
+                            CornerRadius="3"
+                            Padding="8"
+                            Margin="0,0,0,5"
+                            FontSize="Medium"
+                            Keyboard="Email"
+                            Placeholder="Correo Electrónico"
+                            PlaceholderColor="#8F8F8F"
+                            Text="" />
+                        <controls:StandardEntry
+                            x:Name="phoneEntry"
+                            BackgroundColor="#FFFFFF"
+                            BorderColor="#C5C5C5"
+                            BorderThickness="1"
+                            CornerRadius="3"
+                            Padding="8"
+                            Margin="0,0,0,5"
+                            Keyboard="Telephone"
+                            Placeholder="Número Telefónico"
+                            PlaceholderColor="#8F8F8F"
+                            FontSize="Medium"
+                            Text="" />
+                        <controls:StandardEntry 
+                            x:Name="contactNameEntry"
+                            BackgroundColor="#FFFFFF"
+                            BorderColor="#C5C5C5"
+                            BorderThickness="1"
+                            CornerRadius="3"
+                            Padding="8"
+                            Margin="0,0,0,5"
+                            FontSize="Medium"
+                            Placeholder="Nombre del Contacto"
+                            PlaceholderColor="#8F8F8F"
+                            Text="" />
+                        <controls:StandardEntry
+                            x:Name="passwordEntry"
+                            BackgroundColor="#FFFFFF"
+                            BorderColor="#C5C5C5"
+                            BorderThickness="1"
+                            CornerRadius="3"
+                            Padding="8"
+                            Margin="0,0,0,5"
+                            Keyboard="Telephone"
+                            Placeholder="Número del Contacto"
+                            PlaceholderColor="#8F8F8F"
+                            FontSize="Medium"
+                            Text="" />
+                    </StackLayout>
+                </Frame>
+            </Grid>
+        </Grid>
+    </StackLayout>
+</ContentPage>

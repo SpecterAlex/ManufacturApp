@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="ColmenApp.Views.LoginView"
+             xmlns:viewModels="clr-namespace:ColmenApp.ViewModels;assembly=ColmenApp"
+             viewModels:ViewModelLocator.AutoWireViewModel="True">
+    <ContentPage.Content>
+        <Grid>
+            <BoxView Color="#FFFFFF" Opacity=".8"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Image Grid.Row="0" Source="logoAzul.png" WidthRequest="150" HeightRequest="150" Margin="0,150,0,50"/>
+
+                <StackLayout Grid.Row="1" Padding="30,20">
+                    <Entry Placeholder="Usuario"
+                           PlaceholderColor="#0254D5"
+                           Text="{Binding Username}"
+                           TextColor="#0254D5"/>
+
+                    <Entry Placeholder="Contraseña"
+                           PlaceholderColor="#0254D5"
+                           Text="{Binding Password}"
+                           TextColor="#0254D5"
+                           IsPassword="True"/>
+
+                    <Button Text="Iniciar Sesión"
+                            BackgroundColor="#0254D5"
+                            TextColor="White"
+                            CornerRadius="20"
+                            Command="{Binding LoginCommand}"/>
+                    <StackLayout>
+                        <Label Text="¿Recuperar Contraseña?" TextColor="#0254D5" HorizontalOptions="End"/>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
